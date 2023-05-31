@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">EventMu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="email_hint">Email</string>
+    <string name="email_error">Invalid email</string>
+    <string name="password_error">The password must be consists of minimum 8 character</string>
+    <string name="password_hint">Password</string>
+    <string name="login">Login</string>
+    <string name="dont_have_an_account_yet">Dont have an account yet?</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="province">Province</string>
+    <string name="favorite_event">Favorite event</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_profile">Profile</string>
+    <string name="desi_image">image</string>
+    <string name="data_not_found">Data not found</string>
+    <string name="recommended_for_you">Recommended For You</string>
+    <string name="your_favorite_event">Your Favorite Event</string>
+    <string name="dummy_event_price">250.000</string>
+    <string name="dummy_desc">Happy fest adalah sebuah event musik di Sleman, DIY. Diadakan di Stadion Mandala Krida, event ini skan mengundang 50 artis ibukota dengan berbagai genre. Happy fest adalah sebuah event musik di Sleman, DIY. Diadakan di Stadion Mandala Krida, event ini skan mengundang 50 artis ibukota. Happy fest adalah sebuah event musik di Sleman, DIY. Diadakan di Stadion Mandala Krida, event ini skan mengundang 50 artis ibukota dengan berbagai genre. Sekian.</string>
+    <string name="berminat">Berminat?</string>
+    <string name="profile">Profile</string>
+    <string name="dummy_name">Muhammad Rifqy</string>
+    <string name="dummy_phone">085648364857</string>
+    <string name="dummy_province">Jawa Tengah</string>
+    <string name="dummy_fav_event">Festival Musik</string>
+    <string name="edit">Edit</string>
+    <string name="dummy_email">rifqy@gmail.com</string>
+    <string name="logout">Logout</string>
+</resources>
