@@ -89,99 +89,99 @@
         app:layout_constraintStart_toStartOf="@+id/et_name"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
-    <RelativeLayout
-        android:id="@+id/et_province"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:autofillHints="name"
-        android:background="@drawable/rounded_corner"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/et_phone"
-        app:layout_constraintStart_toStartOf="@+id/et_phone"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/et_province"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:autofillHints="name"-->
+<!--        android:background="@drawable/rounded_corner"-->
+<!--        android:padding="16dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/et_phone"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/et_phone"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_phone">-->
 
-        <!-- Text Label -->
-        <TextView
-            android:drawablePadding="3dp"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/province"
-            app:drawableStartCompat="@drawable/baseline_location_on_24" />
-        <!-- Spinner Element -->
-        <Spinner
-            android:id="@+id/province_spinner"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="Spinner" />
-    </RelativeLayout>
+<!--        &lt;!&ndash; Text Label &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:drawablePadding="3dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/province"-->
+<!--            app:drawableStartCompat="@drawable/baseline_location_on_24" />-->
+<!--        &lt;!&ndash; Spinner Element &ndash;&gt;-->
+<!--        <Spinner-->
+<!--            android:id="@+id/province_spinner"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:prompt="Spinner" />-->
+<!--    </RelativeLayout>-->
 
-    <RelativeLayout
-        android:id="@+id/et_fav_event"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:autofillHints="name"
-        android:background="@drawable/rounded_corner"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/et_province"
-        app:layout_constraintStart_toStartOf="@+id/et_province"
-        app:layout_constraintTop_toBottomOf="@+id/et_province">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/et_fav_event"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:autofillHints="name"-->
+<!--        android:background="@drawable/rounded_corner"-->
+<!--        android:padding="16dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/et_province"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/et_province"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_province">-->
 
-        <!-- Text Label -->
-        <TextView
-            android:drawablePadding="3dp"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/favorite_event"
-            app:drawableStartCompat="@drawable/baseline_favorite_24" />
-        <!-- Spinner Element -->
-        <Spinner
-            android:id="@+id/favorite_spinner"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:prompt="Spinner"
-            tools:ignore="HardcodedText" />
-    </RelativeLayout>
+<!--        &lt;!&ndash; Text Label &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:drawablePadding="3dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/favorite_event"-->
+<!--            app:drawableStartCompat="@drawable/baseline_favorite_24" />-->
+<!--        &lt;!&ndash; Spinner Element &ndash;&gt;-->
+<!--        <Spinner-->
+<!--            android:id="@+id/favorite_spinner"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:prompt="Spinner"-->
+<!--            tools:ignore="HardcodedText" />-->
+<!--    </RelativeLayout>-->
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="32dp"
-        android:padding="12dp"
-        android:text="@string/register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_fav_event" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_register"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="32dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:padding="12dp"-->
+<!--        android:text="@string/register"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/et_fav_event" />-->
 
-    <LinearLayout
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/btn_login"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:padding="8dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/already_have_an_account" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/already_have_an_account" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue_dark"
-            android:layout_marginStart="8dp"
-            android:text="@string/login" />
-    </LinearLayout>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/blue_dark"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:text="@string/login" />-->
+<!--    </LinearLayout>-->
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -1,23 +1,45 @@
 package com.example.eventmu
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.eventmu.data.local.datastore.UserPreferences
 import com.example.eventmu.databinding.ActivityMainBinding
+import com.example.eventmu.ui.login.LoginActivity
 
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "TOKEN")
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+    private val mainViewModel: MainViewModel by viewModels {
+        MainViewModel.MainViewModelFactory.getInstance(
+            this,
+            UserPreferences.getInstance(dataStore)
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+//        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        checkSession()
 
         val navView: BottomNavigationView = binding.navView
 
@@ -31,5 +53,16 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    private fun checkSession() {
+        mainViewModel.checkToken().observe(this) {
+            if (it == "null") {
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
+        }
     }
 }
