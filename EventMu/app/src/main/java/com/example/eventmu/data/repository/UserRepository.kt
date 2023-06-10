@@ -1,8 +1,10 @@
 package com.example.eventmu.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.example.eventmu.data.remote.api.ApiService
+import com.example.eventmu.data.remote.request.LoginRequest
 import com.example.eventmu.data.remote.response.LoginResponse
 import com.example.eventmu.helper.ResultState
 import retrofit2.Call
@@ -14,9 +16,9 @@ class UserRepository private constructor(private val apiService: ApiService) {
 
     fun loginUser(email: String, password: String): LiveData<ResultState<LoginResponse>> {
         loginResult.value = ResultState.Loading
+        val loginRequest = LoginRequest(email, password)
         val client = apiService.login(
-            email,
-            password
+            loginRequest
         )
 
         client.enqueue(object : Callback<LoginResponse> {
@@ -50,7 +52,7 @@ class UserRepository private constructor(private val apiService: ApiService) {
                 instance ?: UserRepository(apiService)
             }.also { instance = it }
 
-        private const val REGISTER_ERROR = "Failed to Register, please try again."
+//        private const val REGISTER_ERROR = "Failed to Register, please try again."
         private const val LOGIN_ERROR = "Failed to login, please try again."
     }
 }
