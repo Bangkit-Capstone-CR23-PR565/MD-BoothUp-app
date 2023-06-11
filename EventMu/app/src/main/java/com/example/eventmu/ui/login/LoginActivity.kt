@@ -1,7 +1,5 @@
 package com.example.eventmu.ui.login
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +11,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.eventmu.MainActivity
-import com.example.eventmu.R
 import com.example.eventmu.data.local.datastore.UserPreferences
 import com.example.eventmu.databinding.ActivityLoginBinding
 import com.example.eventmu.helper.ResultState
