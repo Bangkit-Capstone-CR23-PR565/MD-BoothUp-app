@@ -35,6 +35,12 @@
     <string name="logout">Logout</string>
     <string name="be_our_partner">Be Our Partner</string>
     <string name="province_hint">Province</string>
+    <string name="registration_success">Registration success!</string>
+    <string name="empty_name">Write the name first </string>
+    <string name="empty_phone">Write your phone number first. Make sure it starts with the number 08 or 62 </string>
+    <string name="password_not_match">Password and confirmation password do not match.</string>
+    <string name="empty_location">Select the location first.</string>
+    <string name="empty_fav_event">Select your favorite event first.</string>
 
     <string-array name="province_array">
         <item>Jawa Tengah</item>
