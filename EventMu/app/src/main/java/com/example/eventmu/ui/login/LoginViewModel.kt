@@ -21,6 +21,12 @@ class LoginViewModel(
         }
     }
 
+    fun saveUserId(userId : Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            userPreferences.saveUserId(userId)
+        }
+    }
+
 
     class LoginViewModelFactory private constructor(
         private val userRepository: UserRepository,

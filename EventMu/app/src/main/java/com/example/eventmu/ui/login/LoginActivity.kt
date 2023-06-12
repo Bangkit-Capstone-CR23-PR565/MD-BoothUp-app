@@ -54,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
                             binding.progressBar.visibility = View.INVISIBLE
                             val data = it.data
                             loginViewModel.saveToken(data.accessToken.toString())
+                            loginViewModel.saveUserId(data.userId)
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                             finish()
