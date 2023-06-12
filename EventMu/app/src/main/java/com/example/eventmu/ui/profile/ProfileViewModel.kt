@@ -4,15 +4,11 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.example.eventmu.data.local.datastore.UserPreferences
 import com.example.eventmu.data.remote.api.ApiConfig
-import com.example.eventmu.data.remote.api.ApiService
 import com.example.eventmu.data.remote.response.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class ProfileViewModel(private val userPreferences: UserPreferences) : ViewModel() {
@@ -43,7 +39,6 @@ class ProfileViewModel(private val userPreferences: UserPreferences) : ViewModel
                     _location.postValue(userProfile.location)
                     _email.postValue(userProfile.email)
                 } catch (e: Exception) {
-                    // Tangani kesalahan saat mengambil profil pengguna
                     Log.e("ProfileViewModel", "Failed to fetch user profile: ${e.message}")
                 }
             }
@@ -64,7 +59,6 @@ class ProfileViewModel(private val userPreferences: UserPreferences) : ViewModel
                 val fullName = user?.fullName ?: ""
                 Log.d("ProfileViewModel", "response: ${user}")
                 val phone = user?.phone ?: ""
-                Log.d("ProfileViewModel", "phone: $phone")
                 val categoryInterest = user?.categoryInterest ?: ""
                 val location = user?.location ?: ""
                 val email = user?.email ?: ""

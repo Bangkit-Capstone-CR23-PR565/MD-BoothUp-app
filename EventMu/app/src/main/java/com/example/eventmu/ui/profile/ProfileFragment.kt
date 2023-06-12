@@ -1,6 +1,5 @@
 package com.example.eventmu.ui.profile
 
-import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -16,7 +15,6 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import com.example.eventmu.data.local.datastore.UserPreferences
 import com.example.eventmu.databinding.FragmentProfileBinding
-import com.example.eventmu.ui.profile.ProfileViewModel
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_preferences")
 class ProfileFragment : Fragment() {
@@ -78,9 +76,9 @@ class ProfileFragment : Fragment() {
         return root
     }
     private fun openGmail() {
-        val email = "boothupapp@gmail.com" // Ganti dengan alamat email tujuan
-        val subject = "I Wanna be your partner!" // Ganti dengan subjek email yang diinginkan
-        val message = "Hi, BoothUP! I want to register my event." // Ganti dengan isi pesan email yang diinginkan
+        val email = "boothupapp@gmail.com"
+        val subject = "I Wanna be your partner!"
+        val message = "Hi, BoothUP! I want to register my event."
 
         val intent = Intent(Intent.ACTION_SENDTO)
         intent.data = Uri.parse("mailto:$email")
