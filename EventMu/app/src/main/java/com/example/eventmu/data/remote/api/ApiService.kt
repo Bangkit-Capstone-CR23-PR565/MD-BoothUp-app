@@ -22,9 +22,11 @@ interface ApiService {
     @GET("/users/{id}/recommendation-results")
     fun getEvent(
         @Header("Authorization") token: String,
+        @Path("id") id: Int,
         @Query("page") page: Int? = null,
         @Query("size") size: Int? = null
-    ): Call<EventResponse>
+    ): Call<List<EventResponseItem>>
+
 
     @GET("users/{id}")
     fun getProfileData(

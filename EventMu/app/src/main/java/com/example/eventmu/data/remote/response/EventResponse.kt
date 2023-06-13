@@ -5,10 +5,9 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 data class EventResponse(
-
-	@field:SerializedName("EventResponse")
 	val eventResponse: List<EventResponseItem>
 )
+
 
 @Parcelize
 data class EventResponseItem(
