@@ -30,14 +30,14 @@ class EventAdapter(private val context: Context, private val list: List<EventEnt
         holder.binding.tvEventName.text = event.name
         holder.binding.tvLocation.text = event.location
         holder.binding.tvEventPrice.text = event.pricePerStand
-        
+
         holder.binding.layoutStory.setOnClickListener {
             val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
-//            intentDetail.putExtra(DetailActivity.NAME_EXTRA, story.name)
-//            intentDetail.putExtra(DetailActivity.DESCRIPTION_EXTRA, story.description)
-//            intentDetail.putExtra(DetailActivity.DATE_EXTRA, story.createdAt)
-//            intentDetail.putExtra(DetailActivity.IMAGE_URL_EXTRA, story.photoUrl)
-//            holder.itemView.context.startActivity(intentDetail)
+            intentDetail.putExtra(DetailActivity.NAME_EXTRA, event.name)
+            intentDetail.putExtra(DetailActivity.DESCRIPTION_EXTRA, event.description)
+            intentDetail.putExtra(DetailActivity.PRICE_EXTRA, event.pricePerStand)
+            intentDetail.putExtra(DetailActivity.IMAGE_URL_EXTRA, event.photoUrl)
+            holder.itemView.context.startActivity(intentDetail)
         }
     }
 
