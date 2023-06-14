@@ -44,6 +44,7 @@ class LikedEventRepository private constructor(
                                     description = likedEventResponseItem.description,
                                     name = likedEventResponseItem.name,
                                     location = likedEventResponseItem.location,
+                                    category = likedEventResponseItem.category,
                                     id = likedEventResponseItem.id,
                                     pricePerStand = likedEventResponseItem.pricePerStand
                                 )

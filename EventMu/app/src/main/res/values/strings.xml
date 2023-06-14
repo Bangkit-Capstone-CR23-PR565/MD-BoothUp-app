@@ -44,6 +44,8 @@
     <string name="detail_event">Detail Event</string>
     <string name="see_all_event">See All Event</string>
     <string name="all_event">All Event</string>
+    <string name="location">Location</string>
+    <string name="category">Category</string>
 
     <string-array name="province_array">
         <item>Jawa Tengah</item>

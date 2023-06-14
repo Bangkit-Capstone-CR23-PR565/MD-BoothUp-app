@@ -3,6 +3,7 @@ package com.example.eventmu.data.local.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "all_event")
 data class AllEventEntity(
@@ -21,6 +22,9 @@ data class AllEventEntity(
 
     @field:ColumnInfo(name = "description")
     val description: String,
+
+    @field:SerializedName("category")
+    val category: String,
 
     @field:ColumnInfo(name = "id")
     @PrimaryKey

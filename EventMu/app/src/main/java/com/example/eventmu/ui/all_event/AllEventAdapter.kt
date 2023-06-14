@@ -37,7 +37,10 @@ class AllEventAdapter(private val context: Context, private val list: List<AllEv
             intentDetail.putExtra(DetailActivity.DESCRIPTION_EXTRA, event.description)
             intentDetail.putExtra(DetailActivity.PRICE_EXTRA, event.pricePerStand)
             intentDetail.putExtra(DetailActivity.IMAGE_URL_EXTRA, event.photoUrl)
+            intentDetail.putExtra(DetailActivity.LOCATION_EXTRA, event.location)
+            intentDetail.putExtra(DetailActivity.CATEGORY_EXTRA, event.category)
             intentDetail.putExtra(DetailActivity.ID_EXTRA, event.id)
+
             holder.itemView.context.startActivity(intentDetail)
         }
     }

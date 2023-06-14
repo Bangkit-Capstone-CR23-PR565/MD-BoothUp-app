@@ -44,6 +44,7 @@ class AllEventRepository private constructor(
                                     description = allEventResponseItem.description,
                                     name = allEventResponseItem.name,
                                     location = allEventResponseItem.location,
+                                    category = allEventResponseItem.category,
                                     id = allEventResponseItem.id,
                                     pricePerStand = allEventResponseItem.pricePerStand
                                 )

@@ -47,6 +47,7 @@ class EventRepository private constructor(
                                     description = eventResponseItem.description,
                                     name = eventResponseItem.name,
                                     location = eventResponseItem.location,
+                                    category = eventResponseItem.category,
                                     id = eventResponseItem.id,
                                     pricePerStand = eventResponseItem.pricePerStand
                                 )

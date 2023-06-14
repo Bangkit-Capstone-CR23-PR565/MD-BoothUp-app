@@ -54,6 +54,8 @@ class DetailActivity : AppCompatActivity() {
         val description = intent.getStringExtra(DESCRIPTION_EXTRA)
         val price = intent.getStringExtra(PRICE_EXTRA)
         val imgUrl = intent.getStringExtra(IMAGE_URL_EXTRA)
+        val location = intent.getStringExtra(LOCATION_EXTRA)
+        val category = intent.getStringExtra(CATEGORY_EXTRA)
         val id = intent.getIntExtra(ID_EXTRA, 0)
 
         var token: String
@@ -66,6 +68,9 @@ class DetailActivity : AppCompatActivity() {
             binding.tvEventName.text = name
             binding.tvEventDescription.text = description
             binding.tvPrice.text = price
+            binding.tvLocation.text = location
+            binding.tvCategory.text = category
+
             Glide.with(this@DetailActivity)
                 .load(imgUrl)
                 .into(binding.ivStoryImage)
@@ -192,6 +197,8 @@ class DetailActivity : AppCompatActivity() {
         const val DESCRIPTION_EXTRA = "desc_extra"
         const val PRICE_EXTRA = "price_extra"
         const val IMAGE_URL_EXTRA = "img_extra"
+        const val LOCATION_EXTRA = "location_extra"
+        const val CATEGORY_EXTRA = "category_extra"
         const val ID_EXTRA = "id"
     }
 }
