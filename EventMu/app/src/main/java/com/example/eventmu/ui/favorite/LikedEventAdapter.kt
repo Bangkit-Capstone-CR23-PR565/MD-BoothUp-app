@@ -1,4 +1,4 @@
-package com.example.eventmu.ui.home
+package com.example.eventmu.ui.favorite
 
 import android.content.Context
 import android.content.Intent
@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.eventmu.data.local.entity.EventEntity
+import com.example.eventmu.data.local.entity.LikedEventEntity
 import com.example.eventmu.databinding.LayoutEventBinding
 import com.example.eventmu.ui.detail.DetailActivity
 
-class EventAdapter(private val context: Context, private val list: List<EventEntity>) :
-    RecyclerView.Adapter<EventAdapter.ViewHolder>() {
+class LikedEventAdapter(private val context: Context, private val list: List<LikedEventEntity>) :
+    RecyclerView.Adapter<LikedEventAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = LayoutEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
