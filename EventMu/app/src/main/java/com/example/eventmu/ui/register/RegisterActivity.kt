@@ -76,9 +76,26 @@ class RegisterActivity : AppCompatActivity() {
 
         val favEventArray = arrayOf(
             "Pilih Event yang Diminati",
-            "Seminar",
-            "Konser Musik",
-            "Kuliner"
+            "Otomotif",
+            "Bangunan",
+            "Kesehatan",
+            "Teknologi",
+            "Pariwisata",
+            "Kuliner",
+            "Edukasi",
+            "Bisnis",
+            "Sains",
+            "Fashion",
+            "Anak-anak",
+            "Pertanian",
+            "Transportasi",
+            "Lingkungan",
+            "Hewan",
+            "Hiburan",
+            "Musik",
+            "Keuangan",
+            "Furnitur",
+            "Seni"
         )
         val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, favEventArray)
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
