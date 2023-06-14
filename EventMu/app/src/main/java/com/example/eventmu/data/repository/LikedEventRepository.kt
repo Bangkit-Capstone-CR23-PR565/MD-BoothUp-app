@@ -20,7 +20,10 @@ class LikedEventRepository private constructor(
 ) {
     private val getLikedEventResult = MediatorLiveData<ResultState<List<LikedEventEntity>>>()
 
-    fun getLikedEventsByUserId(token: String, userId: Int): LiveData<ResultState<List<LikedEventEntity>>> {
+    fun getLikedEventsByUserId(
+        token: String,
+        userId: Int
+    ): LiveData<ResultState<List<LikedEventEntity>>> {
         getLikedEventResult.value = ResultState.Loading
         val client = apiService.getLikedEvent(token, userId)
 

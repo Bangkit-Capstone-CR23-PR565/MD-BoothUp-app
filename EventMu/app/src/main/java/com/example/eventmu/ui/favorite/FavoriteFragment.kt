@@ -46,7 +46,6 @@ class FavoriteFragment : Fragment() {
         return view
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         userPreferences = UserPreferences.getInstance(requireContext().dataStore)
         super.onViewCreated(view, savedInstanceState)
@@ -76,9 +75,6 @@ class FavoriteFragment : Fragment() {
         return userId
     }
 
-
-
-
     private fun viewLikedEvents(token: String, userId: Int) {
         favoriteViewModel.getLikedEvents(token, userId).observe(viewLifecycleOwner) { resultState ->
             when (resultState) {
@@ -88,8 +84,6 @@ class FavoriteFragment : Fragment() {
                 is ResultState.Error -> {
                     binding.viewLoading.visibility = View.INVISIBLE
                     binding.swipeRefresh.isRefreshing = false
-//                    val error = resultState.error
-//                    Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
                 }
                 is ResultState.Success -> {
                     binding.viewLoading.visibility = View.INVISIBLE

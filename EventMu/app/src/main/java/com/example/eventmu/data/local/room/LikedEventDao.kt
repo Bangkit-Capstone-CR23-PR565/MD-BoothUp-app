@@ -18,6 +18,6 @@ interface LikedEventDao {
     @Query("DELETE FROM liked_event")
     fun deleteAllLikedEvent()
 
-    @Query ("SELECT count(*) FROM liked_event WHERE liked_event.id = :id")
-    suspend fun checkLikedEvent(id: kotlin.Int) : Int
+    @Query("SELECT count(*) FROM liked_event WHERE liked_event.id = :id")
+    suspend fun checkLikedEvent(id: kotlin.Int): Int
 }

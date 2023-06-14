@@ -29,5 +29,4 @@ data class AllEventEntity(
     @field:ColumnInfo(name = "id")
     @PrimaryKey
     val id: Int
-
 )

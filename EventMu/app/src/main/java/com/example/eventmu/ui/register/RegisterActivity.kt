@@ -1,12 +1,10 @@
 package com.example.eventmu.ui.register
 
-//import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -113,9 +111,18 @@ class RegisterActivity : AppCompatActivity() {
 
             if (fullName.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty() &&
                 password.isNotEmpty() && password.length >= 8 &&
-                confPassword.isNotEmpty() && confPassword.length >= 8 && password ==confPassword &&
-                location != "Pilih Provinsi" && favEvent != "Pilih Event yang Diminati") {
-                val result = registerViewModel.register(email, phone, password, confPassword, fullName, location, favEvent)
+                confPassword.isNotEmpty() && confPassword.length >= 8 && password == confPassword &&
+                location != "Pilih Provinsi" && favEvent != "Pilih Event yang Diminati"
+            ) {
+                val result = registerViewModel.register(
+                    email,
+                    phone,
+                    password,
+                    confPassword,
+                    fullName,
+                    location,
+                    favEvent
+                )
                 result.observe(this) {
                     when (it) {
                         is ResultState.Error -> {
@@ -139,13 +146,14 @@ class RegisterActivity : AppCompatActivity() {
                 }
             } else {
                 if (fullName.isNullOrEmpty()) binding.etName.error = getString(R.string.empty_name)
-                else if (phone.isNullOrEmpty()) binding.etPhone.error = getString(R.string.empty_phone)
-                else if (password != confPassword) binding.etConfpassword.error = getString(R.string.password_not_match)
+                else if (phone.isNullOrEmpty()) binding.etPhone.error =
+                    getString(R.string.empty_phone)
+                else if (password != confPassword) binding.etConfpassword.error =
+                    getString(R.string.password_not_match)
                 else if (location == "Pilih Provinsi") {
                     val error = getString(R.string.empty_location)
                     (binding.provinceSpinner.selectedView as TextView).error = error
-                }
-                else if (favEvent == "Pilih Event yang Diminati") {
+                } else if (favEvent == "Pilih Event yang Diminati") {
                     val error = getString(R.string.empty_fav_event)
                     (binding.favoriteSpinner.selectedView as TextView).error = error
                 }

@@ -3,7 +3,6 @@ package com.example.eventmu
 import android.content.Context
 import androidx.lifecycle.*
 import com.example.eventmu.data.local.datastore.UserPreferences
-import com.example.eventmu.helper.Injection
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -14,12 +13,6 @@ class MainViewModel(
 
     fun checkToken(): LiveData<String> {
         return userPreferences.getToken().asLiveData()
-    }
-
-    fun logout() {
-        viewModelScope.launch(Dispatchers.IO) {
-            userPreferences.deleteToken()
-        }
     }
 
     class MainViewModelFactory private constructor(

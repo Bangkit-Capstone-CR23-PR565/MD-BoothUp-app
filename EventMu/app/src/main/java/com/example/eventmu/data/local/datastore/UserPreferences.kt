@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 
 class UserPreferences private constructor(private val dataStore: DataStore<Preferences>) {
     private val token = stringPreferencesKey("TOKEN")
-    private val userId = stringPreferencesKey("USER_ID") // Menambahkan PreferencesKey untuk ID pengguna
+    private val userId = stringPreferencesKey("USER_ID")
     private val USER_ID_KEY = intPreferencesKey("user_id")
 
 
@@ -22,7 +22,7 @@ class UserPreferences private constructor(private val dataStore: DataStore<Prefe
 
 
     fun getUserId(): Flow<Int> = dataStore.data.map { preferences ->
-        preferences[USER_ID_KEY] ?: 0 // Menggunakan nilai default 0 jika data tidak ada
+        preferences[USER_ID_KEY] ?: 0
     }
 
 

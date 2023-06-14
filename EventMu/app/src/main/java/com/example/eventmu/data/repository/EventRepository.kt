@@ -1,17 +1,14 @@
 package com.example.eventmu.data.repository
 
-import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.example.eventmu.data.local.entity.EventEntity
 import com.example.eventmu.data.local.room.EventDao
 import com.example.eventmu.data.remote.api.ApiService
-import com.example.eventmu.data.remote.response.EventResponse
 import com.example.eventmu.data.remote.response.EventResponseItem
 import com.example.eventmu.helper.AppExecutor
 import com.example.eventmu.helper.ResultState
-import com.google.gson.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

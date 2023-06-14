@@ -22,6 +22,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_preferences")
+
 class HomeFragment : Fragment() {
     private lateinit var userPreferences: UserPreferences
 
@@ -59,7 +60,13 @@ class HomeFragment : Fragment() {
         val token = getTokenFromPreferences()
         val userId = getUserIdFromPreferences()
 
-        homeViewModel = ViewModelProvider(this, HomeViewModel.HomeViewModelFactory.getInstance(requireActivity(), UserPreferences.getInstance(requireContext().dataStore)))
+        homeViewModel = ViewModelProvider(
+            this,
+            HomeViewModel.HomeViewModelFactory.getInstance(
+                requireActivity(),
+                UserPreferences.getInstance(requireContext().dataStore)
+            )
+        )
             .get(HomeViewModel::class.java)
 
         viewEvents(token, userId)
@@ -80,8 +87,6 @@ class HomeFragment : Fragment() {
         }
         return userId
     }
-
-
 
 
     private fun viewEvents(token: String, userId: Int) {

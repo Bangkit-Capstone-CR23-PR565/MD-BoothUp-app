@@ -33,7 +33,10 @@ class HomeViewModel(
             @Volatile
             private var instance: HomeViewModelFactory? = null
 
-            fun getInstance(context: Context, userPreferences: UserPreferences): HomeViewModelFactory {
+            fun getInstance(
+                context: Context,
+                userPreferences: UserPreferences
+            ): HomeViewModelFactory {
                 return instance ?: synchronized(this) {
                     instance ?: HomeViewModelFactory(
                         Injection.provideEventRepository(context),

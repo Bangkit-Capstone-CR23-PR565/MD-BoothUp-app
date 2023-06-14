@@ -13,7 +13,6 @@ class FavoriteViewModel(
     private val userPreferences: UserPreferences,
     private val likedEventRepository: LikedEventRepository
 ) : ViewModel() {
-
     fun getLikedEvents(token: String, userId: Int): LiveData<ResultState<List<LikedEventEntity>>> {
         return likedEventRepository.getLikedEventsByUserId(token, userId)
     }
@@ -22,7 +21,6 @@ class FavoriteViewModel(
         private val likedEventRepository: LikedEventRepository,
         private val userPreferences: UserPreferences
     ) : ViewModelProvider.Factory {
-
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(FavoriteViewModel::class.java)) {
                 return FavoriteViewModel(userPreferences, likedEventRepository) as T

@@ -12,14 +12,11 @@ import com.example.eventmu.ui.detail.DetailActivity
 
 class AllEventAdapter(private val context: Context, private val list: List<AllEventEntity>) :
     RecyclerView.Adapter<AllEventAdapter.ViewHolder>() {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = LayoutEventBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
-
     override fun getItemCount() = list.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val event = list[position]
 
@@ -44,6 +41,5 @@ class AllEventAdapter(private val context: Context, private val list: List<AllEv
             holder.itemView.context.startActivity(intentDetail)
         }
     }
-
     inner class ViewHolder(val binding: LayoutEventBinding) : RecyclerView.ViewHolder(binding.root)
 }

@@ -55,7 +55,8 @@ class UserRepository private constructor(private val apiService: ApiService) {
         favEvent: String
     ): LiveData<ResultState<RegisterResponse>> {
         registerResult.value = ResultState.Loading
-        val registerRequest = RegisterRequest(email,phone,password,confPassword,fullName,location,favEvent)
+        val registerRequest =
+            RegisterRequest(email, phone, password, confPassword, fullName, location, favEvent)
         val client = apiService.register(
             registerRequest
         )

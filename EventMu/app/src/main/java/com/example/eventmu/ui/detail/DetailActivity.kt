@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -22,11 +21,8 @@ import com.example.eventmu.data.remote.request.LikeRequest
 import com.example.eventmu.data.remote.response.DeleteLikeResponse
 import com.example.eventmu.data.remote.response.LikeResponse
 import com.example.eventmu.databinding.ActivityDetailBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -132,7 +128,6 @@ class DetailActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<LikeResponse>, t: Throwable) {
-                // Tangani kegagalan jaringan atau error lainnya
                 Log.e("AddToFavorite", "Error: ${t.message}")
             }
         })
@@ -144,7 +139,10 @@ class DetailActivity : AppCompatActivity() {
         val call = apiService.deleteLikedEvent(token, userId, eventId)
 
         call.enqueue(object : Callback<DeleteLikeResponse> {
-            override fun onResponse(call: Call<DeleteLikeResponse>, response: Response<DeleteLikeResponse>) {
+            override fun onResponse(
+                call: Call<DeleteLikeResponse>,
+                response: Response<DeleteLikeResponse>
+            ) {
                 if (response.isSuccessful) {
                     Log.d("DeleteLikedEvent", "Liked event berhasil dihapus")
                 } else {
@@ -153,7 +151,6 @@ class DetailActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<DeleteLikeResponse>, t: Throwable) {
-                // Tangani kegagalan jaringan atau error lainnya
                 Log.e("DeleteLikedEvent", "Error: ${t.message}")
             }
         })

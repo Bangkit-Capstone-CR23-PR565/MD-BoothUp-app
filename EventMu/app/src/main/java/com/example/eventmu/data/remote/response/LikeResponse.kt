@@ -3,7 +3,6 @@ package com.example.eventmu.data.remote.response
 import com.google.gson.annotations.SerializedName
 
 data class LikeResponse(
-
 	@field:SerializedName("added_at")
 	val addedAt: AddedAt,
 
@@ -18,7 +17,6 @@ data class LikeResponse(
 )
 
 data class AddedAt(
-
 	@field:SerializedName("val")
 	val added: String
 )

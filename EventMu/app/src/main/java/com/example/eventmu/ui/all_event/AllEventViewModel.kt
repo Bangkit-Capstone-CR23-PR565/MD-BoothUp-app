@@ -14,7 +14,6 @@ class AllEventViewModel(
     private val userPreferences: UserPreferences,
     private val allEventRepository: AllEventRepository
 ) : ViewModel() {
-
     fun getAllEvent(token: String): LiveData<ResultState<List<AllEventEntity>>> {
         return allEventRepository.getAllEvent(token)
     }
@@ -23,19 +22,19 @@ class AllEventViewModel(
         private val allEventRepository: AllEventRepository,
         private val userPreferences: UserPreferences
     ) : ViewModelProvider.Factory {
-
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(AllEventViewModel::class.java)) {
                 return AllEventViewModel(userPreferences, allEventRepository) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
-
         companion object {
             @Volatile
             private var instance: AllEventViewModelFactory? = null
-
-            fun getInstance(context: Context, userPreferences: UserPreferences): AllEventViewModelFactory {
+            fun getInstance(
+                context: Context,
+                userPreferences: UserPreferences
+            ): AllEventViewModelFactory {
                 return instance ?: synchronized(this) {
                     instance ?: AllEventViewModelFactory(
                         Injection.provideAllEventRepository(context),

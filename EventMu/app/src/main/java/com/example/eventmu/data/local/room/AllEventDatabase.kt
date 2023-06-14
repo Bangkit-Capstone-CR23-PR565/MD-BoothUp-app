@@ -15,7 +15,11 @@ abstract class AllEventDatabase : RoomDatabase() {
         private var instance: AllEventDatabase? = null
         fun getInstance(context: Context): AllEventDatabase =
             instance ?: synchronized(this) {
-                instance ?: Room.databaseBuilder(context, AllEventDatabase::class.java, "all_event.db")
+                instance ?: Room.databaseBuilder(
+                    context,
+                    AllEventDatabase::class.java,
+                    "all_event.db"
+                )
                     .build()
             }.also { instance = it }
     }

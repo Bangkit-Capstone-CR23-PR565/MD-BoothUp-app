@@ -21,12 +21,11 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_preferences")
+
 class AllEventActivity : AppCompatActivity() {
     private lateinit var userPreferences: UserPreferences
     private lateinit var binding: ActivityAllEventBinding
     private lateinit var allEventViewModel: AllEventViewModel
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAllEventBinding.inflate(layoutInflater)
@@ -38,9 +37,14 @@ class AllEventActivity : AppCompatActivity() {
         userPreferences = UserPreferences.getInstance(this.dataStore)
 
         val token = getTokenFromPreferences()
-//        val userId = getUserIdFromPreferences()
 
-        allEventViewModel = ViewModelProvider(this, AllEventViewModel.AllEventViewModelFactory.getInstance(this, UserPreferences.getInstance(this.dataStore)))
+        allEventViewModel = ViewModelProvider(
+            this,
+            AllEventViewModel.AllEventViewModelFactory.getInstance(
+                this,
+                UserPreferences.getInstance(this.dataStore)
+            )
+        )
             .get(AllEventViewModel::class.java)
 
         viewAllEvents(token)
@@ -56,14 +60,6 @@ class AllEventActivity : AppCompatActivity() {
         return token
     }
 
-//    private fun getUserIdFromPreferences(): Int {
-//        var userId = 0
-//        lifecycleScope.launch {
-//            userId = userPreferences.getUserId().first()
-//        }
-//        return userId
-//    }
-
     private fun viewAllEvents(token: String) {
         allEventViewModel.getAllEvent(token).observe(this) { resultState ->
             when (resultState) {
@@ -73,7 +69,6 @@ class AllEventActivity : AppCompatActivity() {
                 is ResultState.Error -> {
                     binding.viewLoading.visibility = View.INVISIBLE
                     binding.swipeRefresh.isRefreshing = false
-                    // Tampilkan pesan error jika ada
                 }
                 is ResultState.Success -> {
                     binding.viewLoading.visibility = View.INVISIBLE
@@ -95,12 +90,10 @@ class AllEventActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onDestroy() {
         super.onDestroy()
         binding.root.removeAllViews()
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
