@@ -35,11 +35,11 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View {
-
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
 
         profileViewModel.fullName.observe(viewLifecycleOwner) { fullName ->
             binding.tvName.text = fullName

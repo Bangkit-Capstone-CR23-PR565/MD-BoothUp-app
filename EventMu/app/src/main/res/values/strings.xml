@@ -42,6 +42,7 @@
     <string name="empty_location">Select the location first.</string>
     <string name="empty_fav_event">Select your favorite event first.</string>
     <string name="detail_event">Detail Event</string>
+    <string name="see_all_event">See All Event</string>
 
     <string-array name="province_array">
         <item>Jawa Tengah</item>

@@ -26,8 +26,9 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
         supportActionBar?.hide()
+        setContentView(binding.root)
+
 
         val provinceArray = arrayOf(
             "Pilih Provinsi",

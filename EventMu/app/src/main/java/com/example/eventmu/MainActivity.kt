@@ -36,8 +36,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 //        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         supportActionBar?.hide()
+        setContentView(binding.root)
+
 //        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         checkSession()

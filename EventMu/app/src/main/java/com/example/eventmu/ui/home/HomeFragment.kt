@@ -38,9 +38,9 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         setSwipeRefreshLayout()
 
