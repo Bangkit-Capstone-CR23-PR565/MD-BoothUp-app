@@ -14,7 +14,7 @@
         android:theme="@style/Theme.EventMu"
         tools:targetApi="31">
         <activity
-            android:name=".AllEventActivity"
+            android:name=".ui.all_event.AllEventActivity"
             android:exported="false" />
         <activity
             android:name=".ui.detail.DetailActivity"

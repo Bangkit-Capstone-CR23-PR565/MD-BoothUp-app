@@ -35,6 +35,13 @@ interface ApiService {
         @Path("event_id") eventId: Int
     ): Call<DeleteLikeResponse>
 
+    @GET("events")
+    fun getAllEvent(
+        @Header("Authorization") token: String,
+        @Query("page") page: Int? = null,
+        @Query("size") size: Int? = null
+    ): Call<List<AllEventResponseItem>>
+
     @GET("/users/{id}/recommendation-results")
     fun getEvent(
         @Header("Authorization") token: String,

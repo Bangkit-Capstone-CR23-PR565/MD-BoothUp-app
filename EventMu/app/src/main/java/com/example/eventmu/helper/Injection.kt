@@ -1,9 +1,11 @@
 package com.example.eventmu.helper
 
 import android.content.Context
+import com.example.eventmu.data.local.room.AllEventDatabase
 import com.example.eventmu.data.local.room.EventDatabase
 import com.example.eventmu.data.local.room.LikedEventDatabase
 import com.example.eventmu.data.remote.api.ApiConfig
+import com.example.eventmu.data.repository.AllEventRepository
 import com.example.eventmu.data.repository.EventRepository
 import com.example.eventmu.data.repository.LikedEventRepository
 import com.example.eventmu.data.repository.UserRepository
@@ -21,6 +23,14 @@ object Injection {
         val eventDao = database.eventDao()
         val appExecutors = AppExecutor()
         return EventRepository.getInstance(apiService, eventDao, appExecutors)
+    }
+
+    fun provideAllEventRepository(context: Context): AllEventRepository {
+        val apiService = ApiConfig.getApiService()
+        val database = AllEventDatabase.getInstance(context)
+        val allEventDao = database.allEventDao()
+        val appExecutors = AppExecutor()
+        return AllEventRepository.getInstance(apiService, allEventDao, appExecutors)
     }
 
     fun provideLikedEventRepository(context: Context): LikedEventRepository {

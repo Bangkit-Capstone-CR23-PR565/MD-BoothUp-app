@@ -1,25 +1,23 @@
 package com.example.eventmu.ui.home
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eventmu.data.local.datastore.UserPreferences
 import com.example.eventmu.databinding.FragmentHomeBinding
 import com.example.eventmu.helper.ResultState
+import com.example.eventmu.ui.all_event.AllEventActivity
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -31,6 +29,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+
     private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
@@ -41,6 +40,11 @@ class HomeFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        binding.btnSeeAll.setOnClickListener {
+            val intent = Intent(requireContext(), AllEventActivity::class.java)
+            startActivity(intent)
+        }
 
         setSwipeRefreshLayout()
 
